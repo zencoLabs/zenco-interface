@@ -1,0 +1,142 @@
+::-webkit-scrollbar {
+  width: 6px;
+  height: 1px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #6b6b6b;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: #181c21;
+}
+
+
+
+.file-upload-container {
+  position: relative;
+  display: inline-block;
+}
+
+.file-upload-label {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 16px;
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 5px;
+}
+
+#file-upload {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.image-preview {
+  margin-top: 0px;
+}
+
+.image-preview img {
+  max-width: 100%;
+  max-height: 300px;
+}
+
+
+
+/* quill  style */
+.bodhi-editor {}
+
+.bodhi-editor .ql-toolbar.ql-snow {
+  border: 0;
+  border-bottom: 1px solid #434b59;
+}
+
+.bodhi-editor .ql-snow .ql-fill,.bodhi-editor .ql-snow .ql-stroke.ql-fill{
+  fill:#d7e2e3; 
+}
+ 
+.bodhi-editor .ql-snow .ql-stroke {
+  fill: none;
+  stroke: #d7e2e3; 
+}
+
+.bodhi-editor .ql-snow .ql-picker-options .ql-stroke {
+  fill: none;
+  stroke: #444 !important; 
+}
+
+.bodhi-editor .ql-snow .ql-picker {
+  color: #d7e2e3;
+}
+.bodhi-editor .ql-snow .ql-picker-options .ql-picker-item {
+  color: #444 !important;
+}
+
+
+.bodhi-editor .ql-container.ql-snow {
+  border: 0;
+}
+
+.bodhi-editor .ql-container.ql-snow .ql-editor {
+  min-height: 280px;
+  background-color: #26244b;
+  letter-spacing: 0.05em;
+}
+
+.bodhi-editor-detail {
+  font-size: 0.925rem;
+  letter-spacing: 0.02em;
+  line-height: 28px;
+  color: #d7e2e3 !important;
+}
+
+.bodhi-editor-detail img {
+  width: 100%;
+}
+
+.bodhi-editor-detail pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.content-view-img img{
+  min-height: 60px !important;
+}
+
+.icon-animation {
+  animation: fadeInOut 2s infinite;
+}
+@keyframes fadeInOut {
+  0% { opacity: 0.3; }
+  50% { opacity: 1; }
+  100% { opacity: 0.3; }
+}
+
+
+
+.art-text-logo {
+  font-family: 'Arial Black', Gadget, sans-serif;
+  font-size: 24px;
+  color: #f39c12;
+  /* text-transform: uppercase; */
+  text-align: center;
+  letter-spacing: 1px;
+  background: linear-gradient(to right,#71b4e2,#ba92be, #bc7f1c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+}
+
+.art-text-logo::before {
+  content: 'Zenco';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  color: #000;
+  z-index: -1;
+}
