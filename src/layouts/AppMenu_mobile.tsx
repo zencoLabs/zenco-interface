@@ -19,14 +19,14 @@ import { useBackgroundDataProvider } from "../hooks/BackgroundDataProvider";
 import { useRouter } from "next/router";
 import { toastInfo } from "../libs/toastAlert";
 import { getUserAvatar, textCenterEllipsis } from "../utils/text-center-ellipsis";
-import { ModalType, useModalStore } from "../store/modalSlice"; 
+import { ModalType, useModalStore } from "../store/modalSlice";
 import { spaceActive } from "../utils/checkAddress";
 import { CHAINS, ConnectChainID } from "../libs/chains";
 import { AppRight_media } from "./AppRight_media";
 
 export function AppMenu_mobile() {
 
-    const [openDrawer, setOpenDrawer] = useState(false); 
+    const [openDrawer, setOpenDrawer] = useState(false);
     const toggleDrawer = (newOpen: boolean) => () => {
         setOpenDrawer(newOpen);
     };
@@ -65,7 +65,7 @@ export function AppMenu_mobile() {
             if (tempSelectMemuIndex > 30 && tempSelectMemuIndex < 40) {
                 setOpen(true);
             }
-        } 
+        }
     }, [tempSelectMemuIndex])
 
     const handleListItemClick = (
@@ -128,7 +128,7 @@ export function AppMenu_mobile() {
         if (!isActiveSpace) {
             setType(ModalType.UserInfo)
             return
-        } 
+        }
         router.push('/mobile-blogeditor')
     }
 
@@ -164,7 +164,7 @@ export function AppMenu_mobile() {
                     {
                         !account ? <Button color="inherit" sx={{ fontSize: '18px' }} onClick={() => { setWalletModalOpen(true) }}>Login</Button>
                             : <Box sx={{ display: "flex", flexGrow: 0, gap: '20px' }}>
-                                <IconButton onClick={() => handleCreate()} sx={{ p: 0 }}> 
+                                <IconButton onClick={() => handleCreate()} sx={{ p: 0 }}>
                                     <svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3724" width="24" height="24"><path d="M425.396383 555.773581 431.371301 561.74849 852.57519 140.54461 814.060439 102.029857 392.856547 523.233737 397.485239 527.862435 355.764622 678.571814 495.194066 647.358507 496.733003 648.897427 499.159706 646.470743 501.690154 645.904253 500.789814 644.840622 925.298594 220.331836 886.783842 181.817091 465.477263 603.123668 425.396383 555.773581 425.396383 555.773581ZM44.988027 196.085106 12.307176 196.085106 12.307176 1023.999999 44.988027 1023.999999 840.222068 1023.999999 840.222068 991.319148 840.222068 991.319148 840.222068 370.382978 796.6476 392.170212 796.6476 980.425531 55.881644 980.425531 55.881644 980.425531 55.881644 239.659574 644.136962 239.659574 665.924196 196.085106 44.988027 196.085106 44.988027 196.085106ZM884.769233 27.03553C901.827657 9.977109 929.364418 9.856704 946.619979 27.112265L1000.236757 80.729042C1017.337559 97.829842 1017.429165 125.464114 1000.313491 142.579788L954.170992 188.722287 838.626735 73.178029 884.769233 27.03553Z" fill="#75cedb" p-id="3725"></path></svg>
                                 </IconButton>
                                 <Tooltip title="Open settings">
@@ -266,13 +266,13 @@ export function AppMenu_mobile() {
             sx={{}}
             PaperProps={{
                 sx: {
-                    background: '#26244b', 
-                    borderRadius: 'unset', 
+                    background: '#26244b',
+                    borderRadius: 'unset',
                 },
             }}
         >
             <Box sx={{ display: 'flex', width: 250, flex: 1 }} role="presentation">
-                <Box sx={{ 
+                <Box sx={{
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'space-between',
@@ -283,7 +283,7 @@ export function AppMenu_mobile() {
                     }}>
                         <Link href="/" style={{
                             display: 'flex',
-                            textAlign: 'center', 
+                            textAlign: 'center',
                             alignItems: 'center',
                             padding: '0px 0 12px 20px',
                             gap: '10px',
@@ -298,11 +298,11 @@ export function AppMenu_mobile() {
                         <List
 
                             component="nav"
-                            aria-labelledby="nested-list-subheader" 
+                            aria-labelledby="nested-list-subheader"
                         >
-                            <ListItemButton 
+                            <ListItemButton
                                 onClick={(event) => handleListItemClick(event, 0, '/')}
-                            > 
+                            >
                                 <ListItemIcon>
                                     <HomeIcon fontSize="medium" sx={{
                                         color: selectedIndex === 0 ? "text.primary" : "text.secondary"
@@ -311,7 +311,7 @@ export function AppMenu_mobile() {
                                 <ListItemText primary="Trending" sx={{
                                     color: selectedIndex === 0 ? "text.primary" : "text.secondary",
                                     fontSize: '0.985rem'
-                                }} /> 
+                                }} />
                             </ListItemButton>
 
                             <ListItemButton
@@ -328,7 +328,7 @@ export function AppMenu_mobile() {
                                 }} />
                             </ListItemButton>
 
-                            <ListItemButton 
+                            <ListItemButton
                                 onClick={(event) => account ? handleListItemClick(event, 2, `/message`) : setWalletModalOpen(true)}
                             >
                                 <ListItemIcon>
@@ -383,7 +383,7 @@ export function AppMenu_mobile() {
                                             color: selectedIndex === 31 ? "text.primary" : "text.secondary",
                                             fontSize: '0.985rem'
                                         }} />
-                                    </ListItemButton> 
+                                    </ListItemButton>
 
                                     <ListItemButton sx={{ pl: 8 }}
                                         onClick={(event) => account ? handleListItemClick(event, 33, `/holdings?address=${account}&menu=1`) : setWalletModalOpen(true)}
@@ -446,7 +446,33 @@ export function AppMenu_mobile() {
                                 }} />
                             </ListItemButton>
 
+                            <Box sx={{
+                                mt: 6,
+                                p: 2,
+                            }}>
+                                <Button
+                                    onClick={() => {
+                                        window.open('https://predict.zenco.club/')
+                                    }}
+                                    sx={(theme) => ({
+                                        background: 'linear-gradient(87deg, #DB455F -1.64%, #D2AB94 111.87%)',
+                                        height: '75px',
+                                        width: '100%',
+                                        transition: 'all 0.2s ease 0s',
+                                        padding: '1rem 0px 1rem 1rem',
+                                        justifyContent: 'flex-start',
+                                        alignItems:'center',
+                                        display: 'flex',
+                                        gap:'4px'
+                                    })}
+                                >
+                                    <svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4186" width="32" height="32"><path d="M601.8 779l0-2.00000001c0-14.9-4.3-27.1-11.6-38.89999998 30-10.3 51.7-36.5 51.7-70.20000001 0-14.9-4.3-29.1-11.6-40.9 30-10.3 51.7-36.5 51.7-70.2 0-13.2-3.3-25.4-9.1-36.2l77.3 0c42.1 0 76.2-31.8 76.2-74.2 0-42.4-34.1-76.7-76.2-76.7l-295.8 0L500.8 323.00000001c29.79999999-30 25.5-83 0-108.60000001-25.5-25.5-76.9-42.3-113.4-5.7L174.5 422.99999999c-4.4 4.4-8.1 9.3-11.1 14.40000001-31.9 39.09999999-50.8 83.9-50.8 178.6 0 216.3 116.7 236.4 260.7 236.40000001L525.6 852.4c42.1 0 76.2-31 76.2-73.4z m-228.59999999 33c-121.8 0-220.6-0.6-220.60000001-196 0-82.8 18.5-132.5 55.8-170.1L410 243c18-18 40.9-13.4 55.6 1.3 14.7 14.7 15.2 41.7 1.1 55.9l-65.9 66.3-43.4 43.6L742.1 410.1c19.90000001 0 36.1 16.3 36.1 36.4 0 20.1-16.2 33.8-36.1 33.80000001l-244.7-1e-8 0 0.39999999c-1.3-0.3-2.6-0.4-4-0.39999998-11.1 0-20.1 9-20.1 20.19999999 0 11.1 9 20.2 20.1 20.20000001 1.39999999 0 2.7-0.1 4-0.40000001l0 0.4L597.8 520.7c19.90000001 0 36.1 14.5 36.1 34.6 0 0 0.5 35.6-36.1 35.6l-132.3 0 0 0.4c-1.3-0.3-2.6-0.4-4-0.39999999-11.1 0-20.1 9-20.1 20.19999999s9 20.2 20.1 20.20000001c1.39999999 0 2.7-0.1 4-0.40000001l0 0.4 92.3 0c19.90000001 0 36.1 14.3 36.1 34.4 0 0-2.3 36.3-36.1 36.3l-116.3 0 0 0.4c-1.3-0.3-2.6-0.4-4-0.4-11.1 0-19.99999999 9-20 20.2s9 19.7 20 19.7c1.39999999 0 2.7-0.1 4-0.4l0 0.4 79.4 0c19.90000001 0 36.1 15 36.1 35.1 0 0 1.4 35.2-36.1 35.2l-147.69999999-0.2zM636.5 339.6l67.4 0c14.8-6.6 30.8-10 47-10.1 63.9 0 115.6 51.8 115.6 115.6 0 63.9-51.8 115.6-115.6 115.6-8.5 0-17-1-25.4-2.9-0.5 14-6.3 27.3-16.3 37.2 13.3 3.7 27.2 5.9 41.7 5.9 86.1 0 155.8-69.8 155.8-155.80000001 0-86.1-69.8-155.8-155.9-155.79999999-45.1 0-85.8 19.5-114.3 50.3z m0 0" fill="#ffffff" p-id="4187"></path></svg>
 
+                                    <Typography variant={'h3'} sx={{ lineHeight: '20px', textAlign: 'left' }}>Prediction Market </Typography>
+
+                                </Button>
+
+                            </Box>
 
                         </List>
                     </Box>
